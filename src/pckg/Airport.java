@@ -15,8 +15,7 @@ public class Airport {
 	public synchronized boolean takeRunway(boolean landed) {
 		try {
 			if (landed)
-				wait(100);// samolot ktory jest w hangarze czeka jeszcze chwilke
-							// by 'moze' ustapic innemu ladowanie
+				wait(100);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -28,7 +27,6 @@ public class Airport {
 	}
 
 	public void freeRunway() {
-//		 System.out.println(String.format("Zwolniono pas w %s", name));
 		runwayFree = true;
 	}
 	

@@ -22,7 +22,7 @@ public class AirportManager {
 		Airport ret;
 		do{
 			ret = list.get(rand.nextInt(list.size()));
-		}while(ret==port);//zabezpieczenie przed wylosowaniem lotniska na ktorym samolot sie znajduje
+		}while(ret==port);
 		return ret;
 	}
 

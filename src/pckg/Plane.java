@@ -16,13 +16,13 @@ public class Plane extends Thread {
 	private State state;
 
 	{
-		maxFuel = (int) (baseFuel * (Math.random() * 0.5 + 0.75));// 75%-125%
+		maxFuel = (int) (baseFuel * (Math.random() * 0.5 + 0.75));
 		fuel = maxFuel;
 	}
 
 	public Plane() {
-		super(Integer.toString(planeCounter++));// nazwa watku/samolotu
-		airport = AirportManager.getRandom(null);// losowe lotnisko startowe
+		super(Integer.toString(planeCounter++));
+		airport = AirportManager.getRandom(null);
 		state = State.LANDED;
 		takePlaceInHangar();
 		speed = 7.f;
@@ -60,22 +60,19 @@ public class Plane extends Thread {
 	}
 
 	private void askForStart() {
-		if (airport.takeRunway(true)) {// true bo state==landed
+		if (airport.takeRunway(true)) {
 			tookRunway = true;
 			state = State.STARTING;
 			x = airport.getX() + 20;
 			y = airport.getY() + 40;
-			// System.out.println(String.format("Samolot %s zablokowal pas by
-			// wystartowac w %s", getName(), airport.getName()));
 		}
 	}
 
 	private void tryStarting() {
 		x -= 4;
 		if (progress++ > 6) {
-			airport.freeRunway();// zwalnia pas
-			airport.freeHangarSpace(hangarSpaceTaken);// zwalnia miejsce w
-														// hangarze
+			airport.freeRunway();
+			airport.freeHangarSpace(hangarSpaceTaken);
 			tookRunway = false;
 			state = State.FLYING;
 			progress = 0;
@@ -90,10 +87,8 @@ public class Plane extends Thread {
 			fuel = maxFuel;
 			takePlaceInHangar();
 			progress = 0;
-			airport.freeRunway();// zwalnia pas
+			airport.freeRunway();
 			tookRunway = false;
-			// System.out.println(String.format("Samolot %s wyladowal w %s",
-			// getName(), airport.getName()));
 		}
 	}
 
@@ -109,9 +104,6 @@ public class Plane extends Thread {
 			x += speed * Math.sin(angle);
 			y += speed * Math.cos(angle);
 		} else {
-			// System.out.println(String.format("Samolot %s jest w przestrzeni
-			// powietrznej %s",getName(), airport.getName()));
-//			y = airport.getY() - 15;
 			state = State.CIRCLING;
 			return;
 		}
@@ -126,7 +118,6 @@ public class Plane extends Thread {
 			y = airport.getY() + 40;
 			return;
 		} else {
-			// tutaj kod jakiegos ruchu nad lotniskiem
 			if (circlingLeft){
 				x-=4;
 				if (x<airport.getX()-20) circlingLeft=false;
@@ -140,9 +131,7 @@ public class Plane extends Thread {
 
 	private void burnFuel() {
 		if (fuel-- < 0) {
-			// System.out.println(String.format("Samolot %s rozbil sie na
-			// %f,%f", getName(), x, y));
-			if (tookRunway)// w razie gdyby magicznie stracil paliwo na pasie
+			if (tookRunway)
 				airport.freeRunway();
 			alive = false;
 			fuel = 0;
