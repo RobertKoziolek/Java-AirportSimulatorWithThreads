@@ -6,6 +6,7 @@ import java.util.Random;
 public class AirportManager { 
 	private static  ArrayList<Airport> list;
 	private static Random rand = new Random();
+	private AirportManager(){}
 	
 	static{
 		list = new ArrayList<Airport>();

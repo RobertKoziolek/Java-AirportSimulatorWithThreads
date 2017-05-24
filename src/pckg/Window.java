@@ -1,5 +1,7 @@
 package pckg;
 
+import pckg.plane.Plane;
+
 import java.awt.Color;
 import java.util.HashMap;
 
@@ -28,26 +30,34 @@ public class Window {
 				InitializeFrame();
 				VisualizeAirports();
 				new Thread(){
+					private Plane[] oldPlanes = new Plane[planesNumber];
+					private JLabel[] labels = new JLabel[planesNumber];
 					public void run() {
-						Plane[] planes = new Plane[planesNumber];
-						JLabel[] labels = new JLabel[planesNumber];
 						for (int i = 0; i < planesNumber; ++i) {
-							planes[i] = new Plane();
+							oldPlanes[i] = new Plane();
 							labels[i] = new JLabel(Integer.toString(i));
 							pane.add(labels[i],0);
 						}
 
 						while (true) {
 							for (int i = 0; i < planesNumber; ++i) {
-								if (!planes[i].isAlive()) {
-									addCrashSite((int) planes[i].getX(), (int) planes[i].getY());
-									planes[i] = new Plane();
-									labels[i].setText(planes[i].getName());
-								}
-								labels[i].setBounds((int) planes[i].getX(), (int) planes[i].getY(), 32, 32);
-								labels[i].setForeground(colors.get(planes[i].getFuelPercentage()));
+								replenishCrashed(i);
+								updatePlaneLabel(i);
 							}
 						}
+					}
+
+					private void updatePlaneLabel(int i) {
+						labels[i].setBounds((int) oldPlanes[i].getPosition().getX(), (int) oldPlanes[i].getPosition().getY(), 32, 32);
+						labels[i].setForeground(colors.get(oldPlanes[i].getFuelPercentage()));
+					}
+
+					private void replenishCrashed(int i) {
+						if (!oldPlanes[i].isAlive()) {
+                            addCrashSite((int) oldPlanes[i].getPosition().getX(), (int) oldPlanes[i].getPosition().getY());
+                            oldPlanes[i] = new Plane();
+                            labels[i].setText(oldPlanes[i].getName());
+                        }
 					}
 				}.start();
 			}

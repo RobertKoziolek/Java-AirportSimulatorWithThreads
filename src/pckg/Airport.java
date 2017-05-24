@@ -1,5 +1,7 @@
 package pckg;
 
+import pckg.plane.Vector2;
+
 public class Airport {
 	private float x, y;
 	private boolean runwayFree = true;
@@ -48,7 +50,10 @@ public class Airport {
 	public float getDistance(float x2, float y2) {
 		return (float) Math.sqrt((x - x2) * (x - x2) + (y - y2) * (y - y2));
 	}
-
+	public float getDistance(Vector2 position)
+	{
+		return (float) Math.sqrt((x - position.getX()) * (x -  position.getX()) + (y - position.getY()) * (y -  position.getY()));
+	}
 	public float getX() {
 		return x;
 	}
