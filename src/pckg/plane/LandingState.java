@@ -24,18 +24,8 @@ public class LandingState implements PlaneState {
         if (progress++ > 6) {
             plane.setState(new LandedState(airport));
             plane.refuel();
-            takePlaceInHangar();
-            plane.moveTo(new Vector2(x,y));
             progress = 0;
             airport.freeRunway();
         }
-    }
-    int hangarSpaceTaken;
-    float x,y;
-    private void takePlaceInHangar() {
-        hangarSpaceTaken = airport.getHangarSpace();
-
-        x = airport.getX() + 38 + hangarSpaceTaken % 2 * 20;
-        y = airport.getY() - 6 + hangarSpaceTaken / 2 * 15;
     }
 }

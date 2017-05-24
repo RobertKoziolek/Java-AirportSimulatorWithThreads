@@ -5,7 +5,7 @@ import pckg.AirportManager;
 
 public class Plane extends  Thread{
     private float fuel, maxFuel;
-    static private float fuelBase = 50, speed = 7f;
+    static private float fuelBase = 100, speed = 7f;
     private Airport airport;
     private PlaneState state;
     private Vector2 position;

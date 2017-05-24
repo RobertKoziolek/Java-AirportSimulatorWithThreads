@@ -13,6 +13,17 @@ public class LandedState implements PlaneState {
     @Override
     public void setup(Plane plane) {
 
+        Vector2 target = takePlaceInHangar();
+        plane.moveTo(target);
+    }
+    private  float x,y;
+    private Vector2 takePlaceInHangar() {
+        int hangarSpaceTaken = airport.getHangarSpace();
+
+        x = airport.getX() + 38 + hangarSpaceTaken % 2 * 20;
+        y = airport.getY() - 6 + hangarSpaceTaken / 2 * 15;
+
+        return new Vector2(x,y);
     }
 
     @Override
