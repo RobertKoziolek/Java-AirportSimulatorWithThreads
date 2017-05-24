@@ -1,6 +1,7 @@
 package pckg.plane;
 
 import pckg.Airport;
+import pckg.Vector2;
 
 public class CircleState implements  PlaneState {
     private Airport airport;
@@ -17,17 +18,17 @@ public class CircleState implements  PlaneState {
 
     @Override
     public void doAction(Plane plane) {
-        if (airport.takeRunway(false)) {
+        if (airport.takeRunway( )) {
             plane.setState(new LandingState(airport));
             return;
         } else {
             Vector2 planePosition = plane.getPosition();
             if (circlingLeft){
                 planePosition.add(new Vector2(-4,0));
-                if (planePosition.getX()<airport.getX()-20) circlingLeft=false;
+                if (planePosition.getX()<airport.getPosition().getX()-20) circlingLeft=false;
             }else{
                 planePosition.add(new Vector2(4,0));
-                if (planePosition.getX()>airport.getX()+20) circlingLeft=true;
+                if (planePosition.getX()>airport.getPosition().getX()+20) circlingLeft=true;
             }
         }
         plane.burnFuel();

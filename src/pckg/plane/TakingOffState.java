@@ -2,9 +2,11 @@ package pckg.plane;
 
 import pckg.Airport;
 import pckg.AirportManager;
+import pckg.Vector2;
 
 public class TakingOffState implements PlaneState {
     private Airport airport;
+    private int progress = 0;
 
     public TakingOffState(Airport airport){
         this.airport=airport;
@@ -13,15 +15,13 @@ public class TakingOffState implements PlaneState {
 
     @Override
     public void setup(Plane plane) {
-
+        plane.moveTo(airport.getRunwayEndPosition());
     }
-    int progress = 0;
     @Override
     public void doAction(Plane plane) {
-        plane.getPosition().add(new Vector2(-4,0));
+        plane.move(new Vector2(-4,0));
         if (progress++ > 6) {
             airport.freeRunway();
-           // airport.freeHangarSpace(hangarSpaceTaken);
             Airport newAirport = AirportManager.getRandom(airport);
             plane.setState(new FlyState(newAirport));
             progress = 0;

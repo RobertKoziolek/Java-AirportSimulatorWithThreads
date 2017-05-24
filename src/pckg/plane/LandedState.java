@@ -1,39 +1,29 @@
 package pckg.plane;
 
+import com.sun.deploy.config.VerboseDefaultConfig;
 import pckg.Airport;
+import pckg.Vector2;
 
 public class LandedState implements PlaneState {
     private Airport airport;
+    private Vector2 hangarSpace;
 
-    public LandedState(Airport airport){
-        this.airport=airport;
+    public LandedState(Airport airport) {
+        this.airport = airport;
     }
-
 
     @Override
     public void setup(Plane plane) {
-
-        Vector2 target = takePlaceInHangar();
-        plane.moveTo(target);
+        hangarSpace = airport.getHangarSpace();
+        plane.moveTo(hangarSpace);
     }
-    private  float x,y;
-    private Vector2 takePlaceInHangar() {
-        int hangarSpaceTaken = airport.getHangarSpace();
 
-        x = airport.getX() + 38 + hangarSpaceTaken % 2 * 20;
-        y = airport.getY() - 6 + hangarSpaceTaken / 2 * 15;
-
-        return new Vector2(x,y);
-    }
 
     @Override
     public void doAction(Plane plane) {
-        if (airport.takeRunway(true)) {
+        if (airport.takeRunway()) {
             plane.setState(new TakingOffState(airport));
-            float x, y;
-            x = airport.getX() + 20;
-            y = airport.getY() + 40;
-            plane.moveTo(new Vector2(x, y));
+            airport.freeHangarSpace(hangarSpace);
         }
     }
 }
