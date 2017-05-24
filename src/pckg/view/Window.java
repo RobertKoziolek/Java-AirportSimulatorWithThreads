@@ -49,7 +49,7 @@ public class Window {
         });
     }
 
-    public void addCrashSite(int x, int y) {
+    private void addCrashSite(int x, int y) {
         JLabel label = new JLabel("*");
         label.setForeground(Color.RED);
         label.setBounds(x, y, 16, 16);
