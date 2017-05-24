@@ -22,7 +22,7 @@ public class TakingOffState implements PlaneState {
         plane.move(new Vector2(-4,0));
         if (progress++ > 6) {
             airport.freeRunway();
-            Airport newAirport = AirportManager.getRandom(airport);
+            Airport newAirport = AirportManager.getRandomOtherThan(airport);
             plane.setState(new FlyState(newAirport));
             progress = 0;
         }

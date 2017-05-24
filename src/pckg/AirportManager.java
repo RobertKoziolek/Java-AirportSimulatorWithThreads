@@ -21,12 +21,12 @@ public class AirportManager {
         list.add(new Airport(400.f, 350.f, "Kr"));
     }
 
-    public static Airport getRandom(Airport port) {
-        Airport ret;
+    public static Airport getRandomOtherThan(Airport previous) {
+        Airport airport;
         do {
-            ret = list.get(rand.nextInt(list.size()));
-        } while (ret == port);
-        return ret;
+            airport = list.get(rand.nextInt(list.size()));
+        } while (airport == previous);
+        return airport;
     }
 
     public static ArrayList<Airport> getList() {

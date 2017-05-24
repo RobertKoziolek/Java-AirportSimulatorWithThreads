@@ -2,18 +2,22 @@ package pckg.plane;
 
 import pckg.Airport;
 import pckg.AirportManager;
+import pckg.PlaneInterface;
 import pckg.Vector2;
 
-public class Plane extends  Thread{
-    private float fuel, maxFuel;
+public class Plane extends  Thread implements PlaneInterface {
+    private static int planeId=0;
     static private float fuelBase = 126, speed = 9f;
+
+    private float fuel, maxFuel;
     private Airport airport;
     private PlaneState state;
     private Vector2 position;
     private boolean alive=true;
 
     public Plane(){
-        this.airport= AirportManager.getRandom(null);
+        super(Integer.toString(planeId++));
+        this.airport= AirportManager.getRandomOtherThan(null);
         setState(new LandedState(airport));
         start();
         maxFuel = (float) ((Math.random()+0.5f)*fuelBase);
