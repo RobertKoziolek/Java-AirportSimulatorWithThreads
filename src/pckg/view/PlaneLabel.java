@@ -9,23 +9,25 @@ import java.util.HashMap;
 public class PlaneLabel extends JLabel {
     private PlaneInterface plane;
 
-    public PlaneLabel(PlaneInterface plane){
+    public PlaneLabel(PlaneInterface plane) {
         super(plane.getName());
-        this.plane=plane;
+        this.plane = plane;
     }
 
-    public void update(){
-        if (plane.isAlive()) {
-            setBounds((int) plane.getPosition().getX(), (int) plane.getPosition().getY(), 32, 32);
-            setForeground(colors.get(plane.getFuelPercentage()));
-        }else{
+    public void setPlane(PlaneInterface plane){
+        this.plane=plane;
+        setText(plane.getName());
+    }
 
-        }
+    public boolean update() {
+        setBounds((int) plane.getPosition().getX(), (int) plane.getPosition().getY(), 32, 32);
+        setForeground(colors.get(plane.getFuelPercentage()));
+        return plane.isAlive();
     }
 
     static private HashMap<Integer, Color> colors = new HashMap<Integer, Color>();
 
-    {
+    static{
         int i;
         for (i = 0; i < 50; i++) {
             colors.put(i, new Color(255, i * 255 / 50, 0));

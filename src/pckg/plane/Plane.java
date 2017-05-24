@@ -1,13 +1,10 @@
 package pckg.plane;
 
-import pckg.Airport;
-import pckg.AirportManager;
-import pckg.PlaneInterface;
-import pckg.Vector2;
+import pckg.*;
 
 public class Plane extends  Thread implements PlaneInterface {
     private static int planeId=0;
-    static private float fuelBase = 126, speed = 9f;
+    static private float fuelBase = Main.FUELBASE, speed = Main.PLANESPEED;
 
     private float fuel, maxFuel;
     private Airport airport;

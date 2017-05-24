@@ -37,17 +37,13 @@ public class Window {
                     public void run() {
                         while (true) {
                             for (PlaneLabel label : planeLabels){
-                                label.update();
+                                if (label.update()==false){
+                                    addCrashSite(label.getX(),label.getY());
+                                    label.setPlane(planes.createNew());
+                                }
                             }
                         }
                     }
-//                    private void replenishCrashed(int i) {
-//                        if (!planes[i].isAlive()) {
-//                            addCrashSite((int) planes[i].getPosition().getX(), (int) planes[i].getPosition().getY());
-//                            planes[i] = new Plane();
-//                            labels[i].setText(planes[i].getName());
-//                        }
-//                    }
                 }.start();
             }
         });

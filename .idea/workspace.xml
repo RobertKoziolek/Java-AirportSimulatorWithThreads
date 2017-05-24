@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf843894-3b19-4677-9d92-ccb3a26545df" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AirportSimulatorOnThreads/pckg/Window$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AirportSimulatorOnThreads/pckg/Window$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AirportSimulatorOnThreads/pckg/Window.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AirportSimulatorOnThreads/pckg/AirportManager.class" afterPath="$PROJECT_DIR$/out/production/AirportSimulatorOnThreads/pckg/AirportManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AirportSimulatorOnThreads/pckg/plane/Plane.class" afterPath="$PROJECT_DIR$/out/production/AirportSimulatorOnThreads/pckg/plane/Plane.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AirportSimulatorOnThreads/pckg/plane/TakingOffState.class" afterPath="$PROJECT_DIR$/out/production/AirportSimulatorOnThreads/pckg/plane/TakingOffState.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pckg/AirportManager.java" afterPath="$PROJECT_DIR$/src/pckg/AirportManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pckg/Main.java" afterPath="$PROJECT_DIR$/src/pckg/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pckg/plane/Plane.java" afterPath="$PROJECT_DIR$/src/pckg/plane/Plane.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pckg/plane/TakingOffState.java" afterPath="$PROJECT_DIR$/src/pckg/plane/TakingOffState.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/pckg/Window.java" afterPath="$PROJECT_DIR$/src/pckg/view/Window.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pckg/view/PlaneLabel.java" afterPath="$PROJECT_DIR$/src/pckg/view/PlaneLabel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pckg/view/Window.java" afterPath="$PROJECT_DIR$/src/pckg/view/Window.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,14 +18,25 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pckg/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state relative-caret-position="85">
+              <caret line="5" column="40" lean-forward="false" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
               <folding>
-                <element signature="e#203#204#0" expanded="true" />
+                <element signature="e#227#228#0" expanded="true" />
+                <element signature="e#252#253#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Plane.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pckg/plane/Plane.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="47" lean-forward="false" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -65,20 +68,20 @@
       <file leaf-file-name="Window.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pckg/view/Window.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="35" column="30" lean-forward="true" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
+            <state relative-caret-position="408">
+              <caret line="45" column="21" lean-forward="false" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
               <folding>
-                <element signature="e#1675#1676#0" expanded="true" />
+                <element signature="e#961#1459#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlaneLabel.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlaneLabel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pckg/view/PlaneLabel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state relative-caret-position="306">
+              <caret line="18" column="31" lean-forward="false" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -117,7 +120,6 @@
         <option value="$PROJECT_DIR$/src/pckg/plane/State.java" />
         <option value="$PROJECT_DIR$/src/pckg/plane/Vector2.java" />
         <option value="$PROJECT_DIR$/src/pckg/plane/PlaneState.java" />
-        <option value="$PROJECT_DIR$/src/pckg/Main.java" />
         <option value="$PROJECT_DIR$/src/pckg/OldAirport.java" />
         <option value="$PROJECT_DIR$/src/pckg/plane/CircleState.java" />
         <option value="$PROJECT_DIR$/src/pckg/plane/FlyState.java" />
@@ -128,14 +130,15 @@
         <option value="$PROJECT_DIR$/src/pckg/Airport.java" />
         <option value="$PROJECT_DIR$/src/pckg/AirportManager.java" />
         <option value="$PROJECT_DIR$/src/pckg/plane/PlaneLabel.java" />
-        <option value="$PROJECT_DIR$/src/pckg/plane/Plane.java" />
         <option value="$PROJECT_DIR$/src/pckg/plane/PlaneManager.java" />
         <option value="$PROJECT_DIR$/src/pckg/Window.java" />
         <option value="$PROJECT_DIR$/src/pckg/PlaneLabel.java" />
         <option value="$PROJECT_DIR$/src/pckg/PlaneInterface.java" />
         <option value="$PROJECT_DIR$/src/pckg/PlaneManager.java" />
-        <option value="$PROJECT_DIR$/src/pckg/view/PlaneLabel.java" />
         <option value="$PROJECT_DIR$/src/pckg/view/Window.java" />
+        <option value="$PROJECT_DIR$/src/pckg/plane/Plane.java" />
+        <option value="$PROJECT_DIR$/src/pckg/view/PlaneLabel.java" />
+        <option value="$PROJECT_DIR$/src/pckg/Main.java" />
       </list>
     </option>
   </component>
@@ -732,12 +735,12 @@
       <workItem from="1495540897892" duration="2823000" />
       <workItem from="1495560605695" duration="1441000" />
       <workItem from="1495563475415" duration="887000" />
-      <workItem from="1495618884318" duration="19105000" />
+      <workItem from="1495618884318" duration="20249000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26220000" />
+    <option name="totallyTimeSpent" value="27364000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1634" height="1066" extended-state="6" />
@@ -796,8 +799,8 @@
         <state relative-caret-position="170">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
-            <element signature="e#178#179#0" expanded="true" />
-            <element signature="e#203#204#0" expanded="true" />
+            <element signature="e#227#228#0" expanded="true" />
+            <element signature="e#252#253#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -823,7 +826,7 @@
         <state relative-caret-position="391">
           <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
           <folding>
-            <element signature="e#1675#1676#0" expanded="true" />
+            <element signature="e#961#1459#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -851,8 +854,8 @@
         <state relative-caret-position="170">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
-            <element signature="e#178#179#0" expanded="true" />
-            <element signature="e#203#204#0" expanded="true" />
+            <element signature="e#227#228#0" expanded="true" />
+            <element signature="e#252#253#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -888,7 +891,7 @@
         <state relative-caret-position="391">
           <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
           <folding>
-            <element signature="e#1675#1676#0" expanded="true" />
+            <element signature="e#961#1459#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -906,8 +909,8 @@
         <state relative-caret-position="51">
           <caret line="3" column="41" lean-forward="false" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
           <folding>
-            <element signature="e#178#179#0" expanded="true" />
-            <element signature="e#203#204#0" expanded="true" />
+            <element signature="e#227#228#0" expanded="true" />
+            <element signature="e#252#253#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -951,7 +954,7 @@
         <state relative-caret-position="612">
           <caret line="36" column="50" lean-forward="true" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
           <folding>
-            <element signature="e#1675#1676#0" expanded="true" />
+            <element signature="e#961#1459#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -961,8 +964,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#178#179#0" expanded="true" />
-            <element signature="e#203#204#0" expanded="true" />
+            <element signature="e#227#228#0" expanded="true" />
+            <element signature="e#252#253#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1006,7 +1009,7 @@
         <state relative-caret-position="187">
           <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
           <folding>
-            <element signature="e#1675#1676#0" expanded="true" />
+            <element signature="e#961#1459#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1135,26 +1138,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pckg/plane/Plane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-246">
-          <caret line="11" column="32" lean-forward="false" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1252#1253#0" expanded="true" />
-            <element signature="e#1298#1299#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pckg/AirportManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="23" column="44" lean-forward="false" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pckg/view/ColorPalette.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1171,23 +1154,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pckg/Main.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/LinkedList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="e#203#204#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pckg/view/Window.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="35" column="30" lean-forward="true" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
-          <folding>
-            <element signature="e#1675#1676#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="258">
+          <caret line="887" column="0" lean-forward="false" selection-start-line="887" selection-start-column="0" selection-end-line="887" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1205,10 +1176,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pckg/view/PlaneLabel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="306">
+          <caret line="18" column="31" lean-forward="false" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pckg/view/Window.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="45" column="21" lean-forward="false" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
+          <folding>
+            <element signature="e#961#1459#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pckg/AirportManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="23" column="44" lean-forward="false" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pckg/plane/Plane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="47" lean-forward="false" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pckg/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="40" lean-forward="false" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
+          <folding>
+            <element signature="e#227#228#0" expanded="true" />
+            <element signature="e#252#253#0" expanded="true" />
           </folding>
         </state>
       </provider>
