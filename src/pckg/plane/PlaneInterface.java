@@ -1,4 +1,4 @@
-package pckg;
+package pckg.plane;
 
 import pckg.Vector2;
 

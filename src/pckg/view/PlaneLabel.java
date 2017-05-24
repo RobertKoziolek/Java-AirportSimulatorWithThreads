@@ -1,6 +1,6 @@
 package pckg.view;
 
-import pckg.PlaneInterface;
+import pckg.plane.PlaneInterface;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,6 +1,4 @@
-package pckg;
-
-import pckg.plane.Plane;
+package pckg.plane;
 
 import java.util.LinkedList;
 import java.util.List;
