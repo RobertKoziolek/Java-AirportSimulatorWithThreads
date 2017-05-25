@@ -20,10 +20,10 @@ public class Window {
     private final PlaneManager planeManager;
     private List<PlaneLabel> planeLabels;
 
-    public Window(int planesNumber) {
+    public Window(PlaneManager planeManager) {
         InitializeFrame();
         VisualizeAirports();
-        planeManager = new PlaneManager(planesNumber);
+        this.planeManager = planeManager;
         createPlaneLabels();
         initializeWatcherThread();
     }

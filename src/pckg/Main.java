@@ -1,5 +1,6 @@
 package pckg;
 
+import pckg.plane.PlaneManager;
 import pckg.view.Window;
 
 public class Main {
@@ -8,6 +9,7 @@ public class Main {
 	public static final float FUELBASE = 99;
 
 	public static void main(String[] args) {
-		new Window(PLANES);
+		PlaneManager planeManager = new PlaneManager(PLANES);
+		new Window(planeManager);
 	}
 }
