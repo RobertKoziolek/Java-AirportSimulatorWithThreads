@@ -16,6 +16,9 @@ import javax.swing.JLayeredPane;
 import javax.swing.SwingUtilities;
 
 public class Window {
+    private static final int PLANE_LAYER = 0;
+    private static final int CRASH_LAYER = 1;
+    private static final int AIRPORT_LAYER = 2;
     private JLayeredPane pane;
     private final PlaneManager planeManager;
     private List<PlaneLabel> planeLabels;
@@ -34,12 +37,14 @@ public class Window {
                 new Thread() {
                     public void run() {
                         while (true) {
-                            for (PlaneLabel label : planeLabels) {
-                                if (label.update() == false) {
-                                    addCrashSite(label.getX(), label.getY());
-                                    label.setPlane(planeManager.createNew());
-                                }
-                            }
+                            planeLabels.forEach(label -> updateLabel(label));
+                        }
+                    }
+
+                    private void updateLabel(PlaneLabel label) {
+                        if (label.update() == false) {
+                            addCrashSite(label.getX(), label.getY());
+                            label.setPlane(planeManager.createNew());
                         }
                     }
                 }.start();
@@ -52,7 +57,7 @@ public class Window {
         for (PlaneInterface plane : planeManager.getPlanes()) {
             PlaneLabel label = new PlaneLabel(plane);
             planeLabels.add(label);
-            pane.add(label, 0);
+            pane.add(label, PLANE_LAYER);
         }
     }
 
@@ -60,7 +65,7 @@ public class Window {
         JLabel label = new JLabel("*");
         label.setForeground(Color.RED);
         label.setBounds(x, y, 16, 16);
-        pane.add(label, 2);
+        pane.add(label, CRASH_LAYER);
     }
 
     private void VisualizeAirports() {
@@ -71,7 +76,7 @@ public class Window {
             portLabel.setHorizontalTextPosition(JLabel.CENTER);
             portLabel.setVerticalTextPosition(JLabel.BOTTOM);
             portLabel.setBounds((int) airport.getPosition().getX(), (int) airport.getPosition().getY(), 100, 86);
-            pane.add(portLabel, 1);
+            pane.add(portLabel, AIRPORT_LAYER);
         }
     }
 

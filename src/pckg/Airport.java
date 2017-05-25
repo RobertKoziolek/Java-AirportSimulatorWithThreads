@@ -44,7 +44,7 @@ public class Airport {
 
 
     private void setUpHangarSpaces() {
-        hangarSpaces = new HashMap<>();
+        hangarSpaces = new HashMap<>(12);
         final float x = getPosition().getX() + 41;
         final float y = getPosition().getY() - 6;
         for (int i = 0; i < 3; ++i) {

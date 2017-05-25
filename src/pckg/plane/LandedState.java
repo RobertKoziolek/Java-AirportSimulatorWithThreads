@@ -4,6 +4,8 @@ import com.sun.deploy.config.VerboseDefaultConfig;
 import pckg.Airport;
 import pckg.Vector2;
 
+import static java.lang.Thread.yield;
+
 public class LandedState implements PlaneState {
     private Airport airport;
     private Vector2 hangarSpace;
@@ -18,9 +20,9 @@ public class LandedState implements PlaneState {
         plane.moveTo(hangarSpace);
     }
 
-
     @Override
     public void doAction(Plane plane) {
+        yield();
         if (airport.takeRunway()) {
             plane.setState(new TakingOffState(airport));
             airport.freeHangarSpace(hangarSpace);
