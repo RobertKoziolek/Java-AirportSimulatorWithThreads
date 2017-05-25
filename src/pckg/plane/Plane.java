@@ -4,7 +4,7 @@ import pckg.*;
 
 public class Plane extends  Thread implements PlaneInterface {
     private static int planeId=0;
-    static private float fuelBase = Main.FUELBASE, speed = Main.PLANESPEED;
+    static private float fuelBase = Main.FUELBASE ;
 
     private float fuel, maxFuel;
     private Airport airport;
@@ -60,7 +60,6 @@ public class Plane extends  Thread implements PlaneInterface {
         if (f<=0) return 0;
         return (int) (100.f * f);
     }
-    float getSpeed() {return speed;}
 
     public Vector2 getPosition(){return position;}
 }

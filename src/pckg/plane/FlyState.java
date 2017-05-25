@@ -1,6 +1,7 @@
 package pckg.plane;
 
 import pckg.Airport;
+import pckg.Main;
 import pckg.Vector2;
 
 public class FlyState implements PlaneState {
@@ -15,7 +16,7 @@ public class FlyState implements PlaneState {
     public void setup(Plane plane) {
         Vector2 position = plane.getPosition();
         double flyingAngle = Math.atan2(airport.getPosition().getX() - position.getX(), airport.getPosition().getY() - position.getY());
-        moveVec = new Vector2(plane.getSpeed() * Math.sin(flyingAngle),plane.getSpeed() * Math.cos(flyingAngle));
+        moveVec = new Vector2(Main.PLANESPEED * Math.sin(flyingAngle),Main.PLANESPEED * Math.cos(flyingAngle));
     }
 
     @Override
