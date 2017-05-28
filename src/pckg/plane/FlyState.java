@@ -14,9 +14,8 @@ public class FlyState implements PlaneState {
 
     @Override
     public void setup(Plane plane) {
-        Vector2 position = plane.getPosition();
-        double flyingAngle = Math.atan2(airport.getPosition().getX() - position.getX(), airport.getPosition().getY() - position.getY());
-        moveVec = new Vector2(Main.PLANESPEED * Math.sin(flyingAngle),Main.PLANESPEED * Math.cos(flyingAngle));
+        float flyingAngle = Vector2.angle(airport.getPosition(), plane.getPosition());
+        moveVec = new Vector2(Math.sin(flyingAngle),  Math.cos(flyingAngle)).mul(Main.PLANESPEED);
     }
 
     @Override

@@ -29,9 +29,16 @@ public final class Vector2 {
         this.y = y;
     }
 
-    public void add(Vector2 moveVec) {
-        x += moveVec.getX();
-        y += moveVec.getY();
+    public Vector2 add(Vector2 vector) {
+        x += vector.getX();
+        y += vector.getY();
+        return this;
+    }
+
+    public Vector2 mul(float multiplier) {
+        x *=multiplier;
+        y *=multiplier;
+        return this;
     }
 
     public static float distance(Vector2 a, Vector2 b) {
@@ -41,5 +48,9 @@ public final class Vector2 {
         y *= y;
 
         return (float) Math.sqrt(x + y);
+    }
+
+    public static float angle(Vector2 a, Vector2 b){
+        return (float)Math.atan2(a.getX() - b.getX(), a.getY() - b.getY());
     }
 }

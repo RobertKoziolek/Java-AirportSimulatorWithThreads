@@ -2,8 +2,10 @@ package pckg;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 public class Airport {
+    //TODO implement an airport with multiple runways
     private Vector2 position;
     private final Vector2 runwayEndPosition, runwayStartPosition;
     private String name;
@@ -38,6 +40,7 @@ public class Airport {
         runwayFree = true;
     }
 
+    //TODO aiport hangar as another class
     private HashMap<Vector2, Boolean> hangarSpaces;
     private final boolean VACANT = false;
     private final boolean OCCUPIED = true;

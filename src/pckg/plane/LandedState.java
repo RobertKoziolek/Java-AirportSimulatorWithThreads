@@ -16,6 +16,7 @@ public class LandedState implements PlaneState {
 
     @Override
     public void setup(Plane plane) {
+        //TODO if hangar is full plane should wait for another plane to take off
         hangarSpace = airport.getHangarSpace();
         plane.moveTo(hangarSpace);
     }
