@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AirportSimulatorOnThreads.iml" filepath="$PROJECT_DIR$/AirportSimulatorOnThreads.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Java-AirportSimulatorWithThreads.iml" filepath="$PROJECT_DIR$/.idea/modules/Java-AirportSimulatorWithThreads.iml" />
     </modules>
   </component>
 </project>

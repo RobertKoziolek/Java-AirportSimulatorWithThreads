@@ -4,23 +4,26 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class PlaneManager {
-    private List<PlaneInterface> planes;
+    private final List<Plane> planes;
 
-    public PlaneManager(int numberOfPlanes){
+    public PlaneManager(final int numberOfPlanes) {
         planes = new LinkedList<>();
-        for (int i=0;i<numberOfPlanes;++i){
-            planes.add(new Plane());
+        for (int i = 0; i < numberOfPlanes; ++i) {
+            planes.add(new PlaneImp());
         }
     }
 
-    public List<PlaneInterface> getPlanes(){return planes;}
+    public List<Plane> getPlanes() {
+        return planes;
+    }
 
-    public PlaneInterface createNew(){
-        PlaneInterface plane = new Plane();
+    public Plane createNew() {
+        final Plane plane = new PlaneImp();
         planes.add(plane);
         return plane;
     }
-    public void remove(PlaneInterface plane){
+
+    public void remove(final Plane plane) {
         planes.remove(plane);
     }
 }

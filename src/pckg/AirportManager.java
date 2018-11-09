@@ -4,14 +4,11 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class AirportManager {
-    private static ArrayList<Airport> list;
-    private static Random rand = new Random();
-
-    private AirportManager() {
-    }
+    private static final ArrayList<Airport> list;
+    private static final Random rand = new Random();
 
     static {
-        list = new ArrayList<Airport>();
+        list = new ArrayList<>();
         list.add(new Airport(40.f, 40.f, "Sz"));
         list.add(new Airport(300.f, 50.f, "Ol"));
         list.add(new Airport(450.f, 60.f, "By"));
@@ -21,7 +18,10 @@ public class AirportManager {
         list.add(new Airport(400.f, 350.f, "Kr"));
     }
 
-    public static Airport getRandomOtherThan(Airport previous) {
+    private AirportManager() {
+    }
+
+    public static Airport getRandomOtherThan(final Airport previous) {
         Airport airport;
         do {
             airport = list.get(rand.nextInt(list.size()));

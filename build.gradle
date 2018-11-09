@@ -1,0 +1,15 @@
+plugins {
+    id 'java'
+}
+
+group 'com.robcio'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.projectlombok:lombok:1.16.20"
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.1'
+}

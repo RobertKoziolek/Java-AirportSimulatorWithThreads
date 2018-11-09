@@ -2,16 +2,19 @@ package pckg;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
 
 public class Airport {
-    //TODO implement an airport with multiple runways
-    private Vector2 position;
     private final Vector2 runwayEndPosition, runwayStartPosition;
-    private String name;
+    private final boolean VACANT = false;
+    private final boolean OCCUPIED = true;
+    //TODO implement an airport with multiple runways
+    private final Vector2 position;
+    private final String name;
     private boolean runwayFree = true;
+    //TODO aiport hangar as another class
+    private HashMap<Vector2, Boolean> hangarSpaces;
 
-    public Airport(Vector2 position, String name) {
+    public Airport(final Vector2 position, final String name) {
         this.position = position;
         this.name = name;
         setUpHangarSpaces();
@@ -23,7 +26,7 @@ public class Airport {
         runwayEndPosition = runway;
     }
 
-    public Airport(float x, float y, String name) {
+    public Airport(final float x, final float y, final String name) {
         this(new Vector2(x, y), name);
     }
 
@@ -40,12 +43,6 @@ public class Airport {
         runwayFree = true;
     }
 
-    //TODO aiport hangar as another class
-    private HashMap<Vector2, Boolean> hangarSpaces;
-    private final boolean VACANT = false;
-    private final boolean OCCUPIED = true;
-
-
     private void setUpHangarSpaces() {
         hangarSpaces = new HashMap<>(12);
         final float x = getPosition().getX() + 41;
@@ -59,7 +56,7 @@ public class Airport {
 
 
     public synchronized Vector2 getHangarSpace() {
-        for (Map.Entry<Vector2, Boolean> space : hangarSpaces.entrySet()) {
+        for (final Map.Entry<Vector2, Boolean> space : hangarSpaces.entrySet()) {
             if (space.getValue() == VACANT) {
                 space.setValue(OCCUPIED);
                 return space.getKey();
@@ -68,7 +65,7 @@ public class Airport {
         return Vector2.EMPTY;
     }
 
-    public synchronized void freeHangarSpace(Vector2 space) {
+    public synchronized void freeHangarSpace(final Vector2 space) {
         if (hangarSpaces.containsKey(space)) {
             hangarSpaces.put(space, VACANT);
         }
