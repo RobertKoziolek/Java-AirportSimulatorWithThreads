@@ -2,9 +2,10 @@ package state;
 
 
 import airport.Airport;
-import launcher.SwingMain;
 import plane.PlaneImp;
 import util.Vector2;
+
+import static gui.Constants.PLANE_SPEED;
 
 public class FlyState implements PlaneState {
     private final Airport airport;
@@ -17,7 +18,7 @@ public class FlyState implements PlaneState {
     @Override
     public void setup(final PlaneImp plane) {
         final float flyingAngle = Vector2.angle(airport.getPosition(), plane.getPosition());
-        moveVec = new Vector2(Math.sin(flyingAngle), Math.cos(flyingAngle)).mul(SwingMain.PLANESPEED);
+        moveVec = new Vector2(Math.sin(flyingAngle), Math.cos(flyingAngle)).mul(PLANE_SPEED);
     }
 
     @Override

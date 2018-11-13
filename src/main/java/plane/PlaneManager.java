@@ -1,14 +1,16 @@
 package plane;
 
+import gui.Constants;
+
 import java.util.LinkedList;
 import java.util.List;
 
 public class PlaneManager {
     private final List<Plane> planes;
 
-    public PlaneManager(final int numberOfPlanes) {
+    public PlaneManager() {
         planes = new LinkedList<>();
-        for (int i = 0; i < numberOfPlanes; ++i) {
+        for (int i = 0; i < Constants.PLANES; ++i) {
             planes.add(new PlaneImp());
         }
     }
@@ -25,5 +27,9 @@ public class PlaneManager {
 
     public void remove(final Plane plane) {
         planes.remove(plane);
+    }
+
+    public boolean isEmpty() {
+        return planes.isEmpty();
     }
 }

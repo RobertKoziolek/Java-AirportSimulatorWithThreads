@@ -2,13 +2,14 @@ package plane;
 
 import airport.Airport;
 import airport.AirportManager;
-import launcher.SwingMain;
 import state.LandedState;
 import state.PlaneState;
 import util.Vector2;
 
+import static gui.Constants.BASE_FUEL;
+
 public class PlaneImp extends Thread implements Plane {
-    static private final float fuelBase = SwingMain.FUELBASE;
+    static private final float fuelBase = BASE_FUEL;
     private static int planeId = 0;
     private final float maxFuel;
     private final Airport airport;

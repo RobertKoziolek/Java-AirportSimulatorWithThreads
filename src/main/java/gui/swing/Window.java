@@ -5,11 +5,14 @@ import airport.Airport;
 import airport.AirportManager;
 import plane.Plane;
 import plane.PlaneManager;
+import util.Vector2;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.LinkedList;
 import java.util.List;
+
+import static gui.Constants.*;
 
 public class Window {
     private static final int PLANE_LAYER = 0;
@@ -19,10 +22,10 @@ public class Window {
     private JLayeredPane pane;
     private List<PlaneLabel> planeLabels;
 
-    public Window(final PlaneManager planeManager) {
-        InitializeFrame();
-        VisualizeAirports();
-        this.planeManager = planeManager;
+    public Window() {
+        this.planeManager = new PlaneManager();
+        initializeFrame();
+        visualizeAirports();
         createPlaneLabels();
         initializeWatcherThread();
     }
@@ -34,13 +37,13 @@ public class Window {
                 new Thread() {
                     @Override
                     public void run() {
-                        while (true) {
-                            planeLabels.forEach(label -> updateLabel(label));
+                        while (!planeManager.isEmpty()) {
+                            planeLabels.forEach(this::updateLabel);
                         }
                     }
 
                     private void updateLabel(final PlaneLabel label) {
-                        if (label.update() == false) {
+                        if (!label.update()) {
                             addCrashSite(label.getX(), label.getY());
                             label.setPlane(planeManager.createNew());
                         }
@@ -66,25 +69,24 @@ public class Window {
         pane.add(label, CRASH_LAYER);
     }
 
-    private void VisualizeAirports() {
+    private void visualizeAirports() {
         for (final Airport airport : AirportManager.getList()) {
             final JLabel portLabel = new JLabel(new ImageIcon("src//img//airport.png"));
             portLabel.setText(airport.getName());
             portLabel.setForeground(Color.BLUE);
             portLabel.setHorizontalTextPosition(JLabel.CENTER);
             portLabel.setVerticalTextPosition(JLabel.BOTTOM);
-            portLabel.setBounds((int) airport.getPosition()
-                                             .getX(), (int) airport.getPosition()
-                                                                   .getY(), 100, 86);
+            final Vector2 position = airport.getPosition();
+            portLabel.setBounds((int) position.getX(), (int) position.getY(), AIRPORT_WIDTH, AIRPORT_HEIGHT);
             pane.add(portLabel, AIRPORT_LAYER);
         }
     }
 
-    private void InitializeFrame() {
-        final JFrame frame = new JFrame("Airplanes simulator!");
+    private void initializeFrame() {
+        final JFrame frame = new JFrame(TITLE);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setBackground(Color.white);
-        frame.setSize(640, 480);
+        frame.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
         frame.setLayout(null);
         frame.setVisible(true);
         pane = new JLayeredPane();

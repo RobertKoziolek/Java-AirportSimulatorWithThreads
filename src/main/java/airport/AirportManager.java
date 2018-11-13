@@ -12,7 +12,7 @@ public class AirportManager {
         list.add(new Airport(40.f, 40.f, "Sz"));
         list.add(new Airport(300.f, 50.f, "Ol"));
         list.add(new Airport(450.f, 60.f, "By"));
-        list.add(new Airport(300.f, 200.f, "��"));
+        list.add(new Airport(300.f, 200.f, "Po"));
         list.add(new Airport(100.f, 300.f, "ZG"));
         list.add(new Airport(520.f, 200.f, "Lu"));
         list.add(new Airport(400.f, 350.f, "Kr"));
